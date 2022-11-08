@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,7 +24,9 @@ export default function Home() {
               </p>
               <div className="flex gap-5 justify-center">
                 <button className="btn btn-primary">Rute Bus</button>
-                <button className="btn btn-primary">Halte Bus</button>
+                <Link href="/shelters" className="btn btn-primary">
+                  Halte Bus
+                </Link>
               </div>
             </div>
           </div>
