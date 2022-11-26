@@ -1,0 +1,383 @@
+[
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.717758292,
+          -6.934732886
+        ]
+      },
+      "properties": {
+        "id": "99db43c5-967a-403a-acc8-caf9e561cccf",
+        "name": "Bunderan Cibiru"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.715754703,
+          -6.932373185
+        ]
+      },
+      "properties": {
+        "id": "fc123140-c65c-4b22-a0bc-741225d84c33",
+        "name": "UIN Sunan Gunung Djati Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.710854884,
+          -6.926517618
+        ]
+      },
+      "properties": {
+        "id": "cb68cfcc-69a0-496c-9082-dafbfbcd1d49",
+        "name": "Borma Cipadung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.705531267,
+          -6.916846194
+        ]
+      },
+      "properties": {
+        "id": "d30e3941-0eec-4973-964d-8da142162982",
+        "name": "Polsek Ujungberung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.701727933,
+          -6.91417764
+        ]
+      },
+      "properties": {
+        "id": "af31c0b5-47e9-424e-8156-dd10d25944c1",
+        "name": "Pasar Ujungberung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.696693643,
+          -6.914026195
+        ]
+      },
+      "properties": {
+        "id": "5881c5f3-4ddc-4038-8e3f-2e26402065c6",
+        "name": "Ujungberung Town Square"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.688487277,
+          -6.908756929
+        ]
+      },
+      "properties": {
+        "id": "5e0216b4-e03e-4ff5-a9de-6d1cfd7a2c7e",
+        "name": "SMA Negeri 24 Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.680628104,
+          -6.905163977
+        ]
+      },
+      "properties": {
+        "id": "f1ea3a40-0791-488f-8ff2-286328878e62",
+        "name": "Sindanglaya"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.676135645,
+          -6.904756635
+        ]
+      },
+      "properties": {
+        "id": "45157d14-58ef-498d-9904-b6488e8f388d",
+        "name": "Lapas Sukamiskin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.673063518,
+          -6.904934195
+        ]
+      },
+      "properties": {
+        "id": "2c020497-0e51-47ee-8793-341e49d1f092",
+        "name": "Arcamanik"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.667092861,
+          -6.9041874
+        ]
+      },
+      "properties": {
+        "id": "b6406f0d-c01b-458a-89a7-34d24ba65b39",
+        "name": "Rumah Sakit Hermina Cikadut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.656813862,
+          -6.902197682
+        ]
+      },
+      "properties": {
+        "id": "71c17946-1622-4f20-8496-201bfd53735a",
+        "name": "Terminal CIcaheum"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.643594248,
+          -6.908506259
+        ]
+      },
+      "properties": {
+        "id": "dfb7d1a2-3ff6-4d8a-b7b7-055475580e6e",
+        "name": "Pasar Cicadas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.643473257,
+          -6.911274068
+        ]
+      },
+      "properties": {
+        "id": "b3f94869-1a82-4ebf-a13d-e5bba753c41a",
+        "name": "Bandung Trade Mall"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.643010334,
+          -6.913801639
+        ]
+      },
+      "properties": {
+        "id": "c08b82d5-235d-463e-a1f6-61f32865e3d6",
+        "name": "Kiara Artha Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.632368361,
+          -6.918162188
+        ]
+      },
+      "properties": {
+        "id": "7baf9221-f054-49af-ba65-51f7ffd74bd6",
+        "name": "Dishub Provinsi Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.629238369,
+          -6.916209085
+        ]
+      },
+      "properties": {
+        "id": "c62e87bf-dedb-404e-88c1-11de9f27c996",
+        "name": "Stadion Persib"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.624546011,
+          -6.918694851
+        ]
+      },
+      "properties": {
+        "id": "d9adaca5-a57d-4c2f-b678-344061ec9f19",
+        "name": "Stasiun Cikudapateuh"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.620905751,
+          -6.920595722
+        ]
+      },
+      "properties": {
+        "id": "93d42cb4-b829-4809-b152-db2f6b54380b",
+        "name": "Pasar Kosambi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.617744196,
+          -6.922256367
+        ]
+      },
+      "properties": {
+        "id": "1148b865-dd10-4aa3-a7de-77a919464ce2",
+        "name": "Simpang Lima"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.612026043,
+          -6.921739375
+        ]
+      },
+      "properties": {
+        "id": "02ab3d77-bcac-4418-b5ab-8a1e847acf30",
+        "name": "Asia Afrika (Lengkong)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.609611478,
+          -6.921446934
+        ]
+      },
+      "properties": {
+        "id": "1941dae2-be01-41ca-85f2-a95216c23b63",
+        "name": "Asia Afrika (Braga)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6074915,
+          -6.921197141
+        ]
+      },
+      "properties": {
+        "id": "f919860b-f689-45e5-abe7-c10d8844944b",
+        "name": "Alun-alun Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.606683138,
+          -6.918918534
+        ]
+      },
+      "properties": {
+        "id": "0e1ab55d-8cb7-416a-8ff8-5c6c437f11fe",
+        "name": "Banceuy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.608566393,
+          -6.919620047
+        ]
+      },
+      "properties": {
+        "id": "dc4abf60-cf48-4643-8fdb-bb4d2bc1306f",
+        "name": "Pasar Cikapundung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.615934588,
+          -6.920821145
+        ]
+      },
+      "properties": {
+        "id": "a59004e9-a455-4d0e-8764-72802610bfd9",
+        "name": "Click Square Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.638226392,
+          -6.911357251
+        ]
+      },
+      "properties": {
+        "id": "e89c964e-a8ad-4a9e-81ec-aefc6e7653e1",
+        "name": "Cibeunying"
+      }
+    }
+  ]
+]
