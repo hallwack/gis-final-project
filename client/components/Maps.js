@@ -4,7 +4,7 @@ import OSM from "ol/source/OSM";
 import React, { useEffect, useRef, useState } from "react";
 import "ol/ol.css";
 
-const Maps = () => {
+const Maps = ({ layer }) => {
   const [map, setMap] = useState();
   const mapEl = useRef();
   const mapRef = useRef();
@@ -17,6 +17,7 @@ const Maps = () => {
         new TileLayer({
           source: new OSM(),
         }),
+        layer
       ],
       view: new View({
         projection: `EPSG:4326`,
