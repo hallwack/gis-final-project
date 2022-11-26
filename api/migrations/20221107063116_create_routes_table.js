@@ -27,7 +27,7 @@ exports.up = async function (knex) {
       table.string("arrival", 255);
       table.specificType("departure_point", "geometry(point, 4326)");
       table.specificType("arrival_point", "geometry(point, 4326)"); */
-      table.specificType("route_line", "geometry(multilinestring, 4326)");
+      table.specificType("route_line", "geometry(linestring, 4326)");
       table.timestamps(true, true);
     });
   }
