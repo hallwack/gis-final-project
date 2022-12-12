@@ -5,11 +5,9 @@ exports.getAllShelters = async (req, res) => {
     /* const sheltersGeoJSON = await knex.raw(
       "SELECT JSONB_BUILD_OBJECT('type', 'FeatureCollection', 'features', JSON_AGG(features.feature)) FROM (SELECT row_to_json(inputs) As feature FROM (SELECT 'Feature' As type, ST_AsGeoJSON(c.coordinate)::json As geometry, row_to_json((SELECT c FROM (SELECT id, name) As c)) As properties FROM shelters As c WHERE c.coordinate is not NULL) As inputs) features"
     ); */
-    const shelters = await knex("shelters").select(
-      "id",
-      "name",
-      geo.asText("coordinate")
-    );
+    const shelters = await knex("shelters")
+      .join('shelters_geometry', 'shelters.geometry', 'shelters_geometry.id')
+      .select("*");
 
     const featureCollection = {
       type: "FeatureCollection",
