@@ -1,4 +1,4 @@
-const knex = require("knex");
+import knex from "knex";
 const geo = require("knex-postgis")(knex);
 
 knex("shelters")
