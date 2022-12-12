@@ -21,52 +21,25 @@ const Shelters = ({ data }) => {
 
   console.log(data);
 
-  /* placesLayer.setSource(
-    new VectorSource({
-      features: new GeoJSON().readFeatures(data.results),
-    })
-  ); */
-
-  /* useEffect(() => {
-    fetch("http://localhost:9876/shelters")
-      .then((res) => res.json())
-      .then((data) => {
-        placesLayer.setSource(
-          new VectorSource({
-            features: new GeoJSON().readFeatures(data.results, {
-              dataProjection: "EPSG:4326",
-            }),
-          })
-        );
-        setResult(data.results);
-      });
-    console.log(result)
-  }, []); */
-
   return (
     <div className="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        {/* <label
+        <label
           htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
+          className="btn btn-primary drawer-button lg:hidden absolute z-50 bottom-3 right-3"
         >
-          Open drawer
-        </label> */}
+          Buka Info Halte
+        </label>
         <div className="relative overflow-hidden rounded-2xl">
           <Maps layer={placesLayer} />
         </div>
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-          <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
-          </li>
-        </ul>
+        <div className="menu p-8 overflow-y-auto w-80 bg-base-100 text-base-content">
+          <h1 className="font-bold text-3xl">Info Halte</h1>
+        </div>
       </div>
     </div>
   );
