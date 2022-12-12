@@ -23,7 +23,9 @@ export default function Home() {
                 repudiandae et a id nisi.
               </p>
               <div className="flex gap-5 justify-center">
-                <button className="btn btn-primary">Rute Bus</button>
+                <Link href="/routes" className="btn btn-primary">
+                  Rute Bus
+                </Link>
                 <Link href="/shelters" className="btn btn-primary">
                   Halte Bus
                 </Link>
