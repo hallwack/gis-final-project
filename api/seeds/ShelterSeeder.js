@@ -1,16 +1,13 @@
-const KnexPostgis = require("knex-postgis");
 /**
  * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
+ * @returns { Promise<void> } 
  */
-exports.seed = async function (knex) {
-  const geo = KnexPostgis(knex);
+exports.seed = async function(knex) {
   // Deletes ALL existing entries
-  await knex("shelters").del();
-  await knex("shelters").insert([
-    {
-      name: "apa lu",
-      coordinate: geo.geomFromText("POINT(107.238943844 -6.324324322)", 4326),
-    },
-  ]);
+  /* await knex('table_name').del()
+  await knex('table_name').insert([
+    {id: 1, colName: 'rowValue1'},
+    {id: 2, colName: 'rowValue2'},
+    {id: 3, colName: 'rowValue3'}
+  ]); */
 };
