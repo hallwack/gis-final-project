@@ -5,9 +5,9 @@ exports.getAllShelters = async (req, res) => {
     /* const sheltersGeoJSON = await knex.raw(
       "SELECT JSONB_BUILD_OBJECT('type', 'FeatureCollection', 'features', JSON_AGG(features.feature)) FROM (SELECT row_to_json(inputs) As feature FROM (SELECT 'Feature' As type, ST_AsGeoJSON(c.coordinate)::json As geometry, row_to_json((SELECT c FROM (SELECT id, name) As c)) As properties FROM shelters As c WHERE c.coordinate is not NULL) As inputs) features"
     ); */
-    const shelters = await knex("shelters")
-      .join('shelters_geometry', 'shelters.geometry', 'shelters_geometry.id')
-      .select("*");
+    const shelters = await knex("shelters_geometry")
+      .leftJoin('shelters', 'shelters_geometry.id', 'shelters.geometry')
+      .select(knex.ref("shelters_geometry.id").as("id_geom"), geo.asText("geom"));
 
     const featureCollection = {
       type: "FeatureCollection",
@@ -16,17 +16,14 @@ exports.getAllShelters = async (req, res) => {
           type: "Feature",
           geometry: {
             type:
-              row.coordinate.slice(0, 5).charAt(0).toUpperCase() +
-              row.coordinate.slice(1, 5).toLowerCase(),
-            coordinates: row.coordinate
-              .slice(6, row.coordinate.length - 1)
+              row.geom.slice(0, 5).charAt(0).toUpperCase() +
+              row.geom.slice(1, 5).toLowerCase(),
+            coordinates: row.geom
+              .slice(6, row.geom.length - 1)
               .split(" ")
               .map((c) => Number.parseFloat(c)),
           },
-          properties: {
-            id: row.id,
-            name: row.name,
-          },
+          properties: row
         };
       }),
     };
@@ -34,7 +31,7 @@ exports.getAllShelters = async (req, res) => {
     return res.json({
       success: true,
       message: "Get All Shelters Successfully",
-      results: shelters,
+      results: featureCollection,
     });
   } catch (err) {
     return res.status(500).json({
