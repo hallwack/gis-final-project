@@ -18,7 +18,8 @@ export async function getServerSideProps() {
 }
 
 const Routes = ({ data }) => {
-  const placesLayer = new VectorLayer({
+  const placesLayer = [
+    new VectorLayer({
     source: new VectorSource({
       features: new GeoJSON().readFeatures(data.results.geom),
     }),
@@ -28,7 +29,8 @@ const Routes = ({ data }) => {
         width: 3
       })
     })
-  });
+  })
+];
   console.log(data)
 
   return (
