@@ -4,20 +4,20 @@ import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import Maps from "../components/Maps";
 import Style from "ol/style/Style";
-import Stroke from "ol/style/Stroke";
 import Icon from "ol/style/Icon";
+import { useSelector } from "react-redux";
+import Link from "next/link";
 
 export async function getServerSideProps() {
   const res = await fetch("http://localhost:9876/shelters");
-  const resRoutes = await fetch("http://localhost:9876/routes");
   const data = await res.json();
-  const dataRoutes = await resRoutes.json();
   return {
-    props: { data, dataRoutes },
+    props: { data },
   };
 }
 
-const Shelters = ({ data, dataRoutes }) => {
+const Shelters = ({ data }) => {
+  const shelterData = useSelector((state) => state.shelters);
   const placesLayer = [
     new VectorLayer({
       source: new VectorSource({
@@ -29,19 +29,8 @@ const Shelters = ({ data, dataRoutes }) => {
           imgSize: [32, 48],
           src: "https://openlayers.org/en/v3.20.1/examples/data/icon.png",
         }),
-      })
-    }),
-    /* new VectorLayer({
-      source: new VectorSource({
-        features: new GeoJSON().readFeatures(dataRoutes.results.geom),
       }),
-      style: new Style({
-        stroke: new Stroke({
-          color: '#FF5733',
-          width: 3
-        })
-      })
-    }) */
+    }),
   ];
 
   return (
@@ -61,7 +50,24 @@ const Shelters = ({ data, dataRoutes }) => {
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <div className="menu p-8 overflow-y-auto w-80 bg-base-100 text-base-content">
-          <h1 className="font-bold text-3xl">Info Halte</h1>
+          <div className="flex flex-col h-full justify-between">
+            <div className="flex flex-col gap-8">
+              <h1 className="font-bold text-3xl">Info Halte</h1>
+              <div className="">
+                <h2 className="text-2xl font-semibold">Nama Halte</h2>
+                <p>{shelterData?.value?.name}</p>
+              </div>
+              <div className="">
+                <h2 className="text-2xl font-semibold">Description</h2>
+                <p>{shelterData?.value?.description}</p>
+              </div>
+            </div>
+            <div>
+              <Link href="/" className="btn btn-primary">
+                Back to Home
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
