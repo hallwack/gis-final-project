@@ -1,37 +1,41 @@
-import React from 'react'
-import Maps from '../components/Maps'
-import VectorLayer from 'ol/layer/Vector';
-import VectorSource from 'ol/source/Vector';
-import GeoJSON from 'ol/format/GeoJSON';
-import Style from 'ol/style/Style';
-import Stroke from 'ol/style/Stroke';
-import Link from 'next/link';
+import React from "react";
+import Maps from "../components/Maps";
+import VectorLayer from "ol/layer/Vector";
+import VectorSource from "ol/source/Vector";
+import GeoJSON from "ol/format/GeoJSON";
+import Style from "ol/style/Style";
+import Stroke from "ol/style/Stroke";
+import Link from "next/link";
+import { useSelector } from "react-redux";
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:9876/routes')
-  const data = await res.json()
+  const res = await fetch("http://localhost:9876/routes");
+  const data = await res.json();
   return {
     props: {
-      data
-    }
-  }
+      data,
+    },
+  };
 }
 
 const Routes = ({ data }) => {
+  const routeData = useSelector((state) => state.routes);
+  console.log(routeData)
+
   const placesLayer = [
     new VectorLayer({
-    source: new VectorSource({
-      features: new GeoJSON().readFeatures(data.results.geom),
+      source: new VectorSource({
+        features: new GeoJSON().readFeatures(data.results.geom),
+      }),
+      style: new Style({
+        stroke: new Stroke({
+          color: "#FF5733",
+          width: 3,
+        }),
+      }),
     }),
-    style: new Style({
-      stroke: new Stroke({
-        color: '#FF5733',
-        width: 3
-      })
-    })
-  })
-];
-  console.log(data)
+  ];
+  console.log(data);
 
   return (
     <div className="drawer drawer-mobile">
@@ -50,26 +54,28 @@ const Routes = ({ data }) => {
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <div className="menu p-8 overflow-y-auto w-80 bg-base-100 text-base-content">
-          <div className='flex flex-col h-full justify-between'>
-            <div className='flex flex-col gap-8'>
+          <div className="flex flex-col h-full justify-between">
+            <div className="flex flex-col gap-8">
               <h1 className="font-bold text-3xl">Info Rute</h1>
-              <div className=''>
-                <h2 className='text-2xl font-semibold'>Code</h2>
-                <p>{data.results.info[0].code}</p>
+              <div className="">
+                <h2 className="text-2xl font-semibold">Code</h2>
+                <p>{routeData?.value?.code}</p>
               </div>
-              <div className=''>
-                <h2 className='text-2xl font-semibold'>Description</h2>
-                <p>{data.results.info[0].description}</p>
+              <div className="">
+                <h2 className="text-2xl font-semibold">Description</h2>
+                <p>{routeData?.value?.description}</p>
               </div>
             </div>
             <div>
-              <Link href="/" className='btn btn-primary'>Back to Home</Link>
+              <Link href="/" className="btn btn-primary">
+                Back to Home
+              </Link>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Routes
+export default Routes;
