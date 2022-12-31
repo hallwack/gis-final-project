@@ -11,14 +11,14 @@ const Maps = ({ layer }) => {
   mapRef.current = map;
 
   useEffect(() => {
-    console.log('layer', layer)
+    console.log(layer);
     const initialMap = new Map({
       target: mapEl.current,
       layers: [
         new TileLayer({
           source: new OSM(),
         }),
-        ...layer
+        ...layer,
       ],
       view: new View({
         projection: `EPSG:4326`,
@@ -27,19 +27,17 @@ const Maps = ({ layer }) => {
       }),
     });
 
-    initialMap.on('click', (event) => {
-      const feature = mapRef.current.forEachFeaturePixel(event.pixel, (feature, layer) => console.log(feature))
-      if (feature && feature.get('type') == 'Point') {
-        var coordinate = evt.coordinate;    //default projection is EPSG:3857 you may want to use ol.proj.transform
-
-        content.innerHTML = feature.get('desc');
-        popup.setPosition(coordinate);
-      }
-      else {
-        popup.setPosition(undefined);
-
-      }
-    })
+    initialMap.on("click", (event) => {
+      mapRef.current.forEachFeatureAtPixel(event.pixel, (feature, layer) => {
+        /* console.log(feature.getGeometry().getType()) */
+        if (feature && feature.getGeometry().getType() === "Point") {
+          if (feature.get("isActive")) {
+            console.log(feature);
+          }
+        } else {
+        }
+      });
+    });
 
     setMap(initialMap);
   }, []);
