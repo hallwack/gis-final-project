@@ -3,11 +3,18 @@ import TileLayer from "ol/layer/Tile";
 import OSM from "ol/source/OSM";
 import React, { useEffect, useRef, useState } from "react";
 import "ol/ol.css";
+import { useDispatch } from "react-redux";
+import {
+  showShelterData,
+  storeShelterData,
+} from "../features/shelters/sheltersSlice";
+import { storeRouteData } from "../features/routes/routesSlice";
 
 const Maps = ({ layer }) => {
   const [map, setMap] = useState();
   const mapEl = useRef();
   const mapRef = useRef();
+  const dispatch = useDispatch();
   mapRef.current = map;
 
   useEffect(() => {
@@ -29,12 +36,18 @@ const Maps = ({ layer }) => {
 
     initialMap.on("click", (event) => {
       mapRef.current.forEachFeatureAtPixel(event.pixel, (feature, layer) => {
-        /* console.log(feature.getGeometry().getType()) */
         if (feature && feature.getGeometry().getType() === "Point") {
           if (feature.get("isActive")) {
-            console.log(feature);
+            const properties = feature.getProperties();
+            delete properties.geometry;
+            dispatch(storeShelterData(properties));
           }
-        } else {
+        }
+
+        if (feature && feature.getGeometry().getType() === "LineString") {
+          const properties = feature.getProperties();
+          delete properties.geometry;
+          dispatch(storeRouteData(properties));
         }
       });
     });
